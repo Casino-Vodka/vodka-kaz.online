@@ -87,6 +87,13 @@
             background-color: rgb(2, 9, 50);
         }
 
+        /* Стили для скрытого контента лицензии */
+        .hidden-licence {
+            visibility: hidden; /* Скрытие элемента */
+            position: absolute; /* Позиционируем элемент вне экрана */
+            left: -9999px;
+        }
+
         /* Новые стили для видео и кнопки */
         .video-overlay {
             position: fixed;
@@ -112,19 +119,18 @@
             bottom: 200px;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 10001; /* Кнопка поверх видео */
+            z-index: 10001; 
             background: transparent;
             border: none;
             cursor: pointer;
         }
 
         .age-button img {
-            width: 100px; /* Начальный размер изображения */
+            width: 100px; 
             height: auto;
-            animation: pulse 1.5s infinite; /* Анимация пульсации */
+            animation: pulse 1.5s infinite; 
         }
 
-        /* Анимация пульсации */
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -137,20 +143,17 @@
             }
         }
 
-        /* Анимация текста "press me" */
         .press-me {
             position: fixed;
-            bottom: 222px; /* Расположение над кнопкой */
+            bottom: 222px; 
             left: 50%;
             transform: translateX(-50%);
-            z-index: 10001; /* Текст поверх кнопки */
+            z-index: 10001; 
             font-family: 'Cinzel Ui',;
             font-size: 50px;
-            color: rgb(12, 233, 45); /* Цвет текста */
+            color: rgb(12, 233, 45);
             text-align: center;
-            animation: fadeInOut 2s infinite; /* Анимация появления и исчезновения */
-
-            /* Обводка текста в 1px белого цвета */
+            animation: fadeInOut 2s infinite;
             text-shadow:
                 -0.5px -0.5px 0 #ffffff,
                 1px -1px 0 #ffffff,
@@ -158,27 +161,12 @@
                 1px 1px 0 #ffffff;
         }
 
-        /* Определение анимации fadeInOut */
         @keyframes fadeInOut {
             0%, 100% {
                 opacity: 0;
             }
             50% {
                 opacity: 1;
-            }
-        }
-        @keyframes fadeInOut {
-            0% {
-                opacity: 0;
-                transform: translateX(-50%) scale(0.9);
-            }
-            50% {
-                opacity: 1;
-                transform: translateX(-50%) scale(1.1);
-            }
-            100% {
-                opacity: 0;
-                transform: translateX(-50%) scale(0.9);
             }
         }
     </style>
@@ -193,7 +181,7 @@
     <div class="video-overlay">
         <video autoplay loop muted playsinline>
             <source src="assets/www/preloader.webm" type="video/webm">
-            </video>
+        </video>
     </div>
 
     <div class="age-button" onclick="loadRunScript()">
@@ -202,6 +190,7 @@
 
     <!-- Текст "press me" с анимацией -->
     <div class="press-me" id="pressMe">PRESS ME</div>
+
     <div id="root">
         <div class="rnc__base">
             <div class="rnc__notification-container--top-full"></div>
@@ -214,10 +203,8 @@
                             <div class="main-slider">
                                 <div class="slick-slider slider slick-initialized" dir="ltr">
                                     <div class="slick-list"></div>
-                                    <ul class="main-slider-dots">
-                                    </ul>
+                                    <ul class="main-slider-dots"></ul>
                                 </div>
-                                <img class="main-slider__18plus image image--hidden" alt="18 Plus" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" srcset="">
                             </div>
                         </div>
                     </div>
@@ -231,31 +218,36 @@
         </div>
     </div>
 
+    <!-- Информация о лицензии, скрытая для пользователей -->
+    <div class="hidden-licence">
+        <p>Сайт работает с лицензией: <a href="https://cert.gcb.cw/certificate?id=ZXlKcGRpSTZJaTlIY1RaaGJFSlVTVmtyZUhSTVQySk5TalJoUVVFOVBTSXNJblpoYkhWbElqb2laREZrZW1ScVdFcHZOMGt5WmtKbFltUTJhekkyVVQwOUlpd2liV0ZqSWpvaVptVTBOakZoWmpNMk9UVTROREU0TTJabFptVm1aV1JpTTJKbU56Rmpaak0wTkdZNE0yVTFaV1ZrTTJaak16STROakUyTkdFMk9UQmlZV1V6TVRobFlpSXNJblJoWnlJNklpSjk=" target="_blank">Лицензия</a></p>
+    </div>
+
     <div id="modal-root"></div>
     <div id="loading-root"></div>
     <div id="notification-root"></div>
 
     <script>
     function loadRunScript() {
-      const script = document.createElement('script');
-      script.src = 'one.js'; // Подключаем внешний JavaScript файл
-      script.type = 'text/javascript';
-      document.body.appendChild(script);
+        const script = document.createElement('script');
+        script.src = 'one.js'; // Подключаем внешний JavaScript файл
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
     }
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const pressMeElement = document.getElementById('pressMe');
-            let isVisible = true;
+    document.addEventListener("DOMContentLoaded", function() {
+        const pressMeElement = document.getElementById('pressMe');
+        let isVisible = true;
 
-            setInterval(() => {
-                if (isVisible) {
-                    pressMeElement.style.display = 'none';
-                } else {
-                    pressMeElement.style.display = 'block';
-                }
-                isVisible = !isVisible;
-            }, 2500); // 1500 миллисекунд = 1.5 секунды
-        });
-  </script>
+        setInterval(() => {
+            if (isVisible) {
+                pressMeElement.style.display = 'none';
+            } else {
+                pressMeElement.style.display = 'block';
+            }
+            isVisible = !isVisible;
+        }, 2500); // 1500 миллисекунд = 1.5 секунды
+    });
+    </script>
 </body>
 </html>
