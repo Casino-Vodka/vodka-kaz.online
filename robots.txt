@@ -1,4 +1,17 @@
 User-agent: *
-Disallow: 
+Allow: /
+
+# Закрываем страницы, не нужные для индексации
+Disallow: /admin/
+Disallow: /login/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /search?
+Disallow: /private/
+
+# Карты сайта для поисковиков
 Sitemap: https://www.vodkacasino.store/sitemap.xml
 Sitemap: https://vodkacasino.store/sitemap.xml
+
+# Указание основного хоста (важно для Яндекса)
+Host: https://www.vodkacasino.store
