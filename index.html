@@ -102,52 +102,52 @@
         }
 
         .age-button {
-            position: fixed;
-            bottom: 500px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10001;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
+    position: fixed;
+    bottom: 10%; /* Отступ от нижней части экрана */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
 
-        .age-button img {
-            width: 100px;
-            height: auto;
-            animation: pulse 1.5s infinite;
-        }
+.age-button img {
+    width: 100px;
+    height: auto;
+    animation: pulse 1.5s infinite;
+}
 
-        @keyframes pulse {
-            0% {
-                transform: scale(3);
-            }
-            50% {
-                transform: scale(4);
-            }
-            100% {
-                transform: scale(3);
-            }
-        }
+@keyframes pulse {
+    0% {
+        transform: scale(3);
+    }
+    50% {
+        transform: scale(4);
+    }
+    100% {
+        transform: scale(3);
+    }
+}
 
-        .press-me {
-            pointer-events: none;
-            position: fixed;
-            bottom: 525px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10001;
-            font-family: 'Cinzel Ui',;
-            font-size: 55px;
-            color: rgb(12, 233, 45);
-            text-align: center;
-            animation: fadeInOut 2s infinite;
-            text-shadow:
-                -0.5px -0.5px 0 #ffffff,
-                1px -1px 0 #ffffff,
-                -0.8px 0.8px 0 #ffffff,
-                1px 1px 0 #ffffff;
-        }
+.press-me {
+    pointer-events: none;
+    position: fixed;
+    bottom: 10%; /* Отступ от нижней части экрана */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    font-family: 'Cinzel Ui', sans-serif;
+    font-size: 55px;
+    color: rgb(12, 233, 45);
+    text-align: center;
+    animation: fadeInOut 2s infinite;
+    text-shadow:
+        -0.5px -0.5px 0 #ffffff,
+        1px -1px 0 #ffffff,
+        -0.8px 0.8px 0 #ffffff,
+        1px 1px 0 #ffffff;
+}
 
         @keyframes fadeInOut {
             0%, 100% {
