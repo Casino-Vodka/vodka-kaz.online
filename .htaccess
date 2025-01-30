@@ -1,0 +1,19 @@
+# Включаем модуль переписывания URL
+RewriteEngine On
+
+# Если запрашиваемый файл или папка не существуют, перенаправляем на index.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
+
+# Если сайт переехал и нужно перенаправить старую страницу на новую (измените ссылки)
+Redirect 301 https://Casino-Vodka.github.io https://vodkacasino.store
+
+# Разрешаем индексацию страницы для поисковиков
+Header set X-Robots-Tag "index, follow"
+
+# Отключаем кэширование, если нужно
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+</IfModule>
