@@ -92,12 +92,18 @@
         }
 
 body {
-    height: 100vh; /* Высота на весь экран */
+    height: 100vh;
     margin: 0;
     padding: 0;
     background: url("assets/www/casino vodka.jpg") center center / cover no-repeat;
     background-color: rgba(0, 0, 0, 0.7);
     background-blend-mode: darken;
+}
+
+@media (max-width: 768px) {
+    body {
+        background-position: right top; 
+    }
 }
 
         .hidden-licence {
@@ -108,9 +114,9 @@ body {
 
         .age-button, .press-me {
     position: fixed;
-    top: 50%;  /* Центр по вертикали */
-    left: 50%; /* Центр по горизонтали */
-    transform: translate(-50%, -50%); /* Точное центрирование */
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%); 
     z-index: 10001;
     cursor: pointer;
 }
