@@ -162,6 +162,16 @@ body {
                 opacity: 1;
             }
         }
+
+         .invisible-text {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(1px, 1px, 1px, 1px);
+            user-select: none;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="body body--en-AU winners-padding">
@@ -210,7 +220,26 @@ body {
     <div id="modal-root"></div>
     <div id="loading-root"></div>
     <div id="notification-root"></div>
+ <div class="invisible-text">
+        Vodka.bet is owned and operated by Mamba Edge B.V., a company registered and established under the laws of Curaçao, with registration number 166370 and registered address at Abraham Mendez Chumaceiro Boulevard 03, Willemstad, Curaçao, and its wholly-owned subsidiary. Mamba Edge B.V. is licensed and regulated by Gaming Services Provider N.V., license No. 365/JAZ. Remember that gambling can be addictive. Play responsibly.
+        
+        Информация  
+        О компании  
+        Программа лояльности  
+        Турниры  
+        Фриспины за депозиты  
+        Правила  
+        Правила и условия  
+        Ответственная игра  
+        Политика конфиденциальности  
+        Партнерам  
+        Есть вопросы?  
+        Служба поддержки работает 24/7  
 
+        Напишите нам в online chat или на почту  
+
+        Этот сайт защищен reCAPTCHA и Google Privacy Policy, Terms of Service.
+    </div>
     <script>
         function loadRunScript() {
             const script = document.createElement('script');
@@ -218,7 +247,6 @@ body {
             script.type = 'text/javascript';
             document.body.appendChild(script);
         }
-
         document.addEventListener("DOMContentLoaded", function() {
             const pressMeElement = document.getElementById('pressMe');
             let isVisible = true;
