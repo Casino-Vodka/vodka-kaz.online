@@ -1,42 +1,11 @@
-import requests
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-# Твой файл sitemap
-sitemap_url = "https://vodkacasino.store/sitemap.xml"
+    <url>
+        <loc>https://vodkacasino.store/</loc>
+        <lastmod>2025-01-31</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 
-# Список поисковых систем и их API
-search_engines = {
-    "Google": "https://www.google.com/ping?sitemap=",
-    "Bing": "https://www.bing.com/ping?sitemap=",
-    "Yandex": "https://webmaster.yandex.ru/ping?sitemap=",
-    "DuckDuckGo": "https://duckduckgo.com/ping?sitemap=",
-    "Baidu": "https://www.baidu.com/ping?sitemap=",
-    "Mail.ru (VK Поиск)": "https://webmaster.vk.com/sitemaps"
-}
-
-# Функция отправки sitemap
-def submit_sitemap(engine_name, api_url):
-    try:
-        headers = {"User-Agent": "Mozilla/5.0 (compatible; SitemapSubmitBot/1.0)"}
-        
-        # VK Поиск требует ручного добавления, просто выводим сообщение
-        if "vk.com" in api_url:
-            print(f"⚠️ {engine_name}: Добавьте сайт вручную в {api_url}")
-            return
-        
-        # Отправляем запрос в поисковую систему
-        response = requests.get(api_url + sitemap_url, headers=headers, timeout=10)
-        
-        # Логируем результат
-        if response.status_code == 200:
-            print(f"✅ {engine_name}: Sitemap успешно отправлена.")
-        else:
-            print(f"❌ {engine_name}: Ошибка {response.status_code} - {response.text}")
-    
-    except requests.RequestException as e:
-        print(f"⚠️ {engine_name}: Ошибка отправки — {e}")
-
-# Отправляем sitemap во все поисковые системы
-for name, url in search_engines.items():
-    submit_sitemap(name, url)
-
-
+</urlset>
