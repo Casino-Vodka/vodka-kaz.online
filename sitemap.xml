@@ -1,88 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://vodkacasino.store/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://vodkacasino.store/bonus/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://vodkacasino.store/games/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://vodkacasino.store/faq/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://vodkacasino.store/support/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://vodkacasino.store/game/blackjack/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://vodkacasino.store/slots</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://www.vodkacasino.store/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://www.vodkacasino.store/bonus/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://www.vodkacasino.store/games/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.vodkacasino.store/faq/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.vodkacasino.store/support/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://www.vodkacasino.store/game/blackjack/</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://www.vodkacasino.store/slots</loc>
-        <lastmod>2025-01-24</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-</urlset>
+import requests
+
+# Твой файл sitemap
+sitemap_url = "https://vodkacasino.store/sitemap.xml"
+
+# Список поисковых систем и их API
+search_engines = {
+    "Google": "https://www.google.com/ping?sitemap=",
+    "Bing": "https://www.bing.com/ping?sitemap=",
+    "Yandex": "https://webmaster.yandex.ru/ping?sitemap=",
+    "DuckDuckGo": "https://duckduckgo.com/ping?sitemap=",
+    "Baidu": "https://www.baidu.com/ping?sitemap=",
+    "Mail.ru (VK Поиск)": "https://webmaster.vk.com/sitemaps"
+}
+
+# Функция отправки sitemap
+def submit_sitemap(engine_name, api_url):
+    try:
+        headers = {"User-Agent": "Mozilla/5.0 (compatible; SitemapSubmitBot/1.0)"}
+        
+        # VK Поиск требует ручного добавления, просто выводим сообщение
+        if "vk.com" in api_url:
+            print(f"⚠️ {engine_name}: Добавьте сайт вручную в {api_url}")
+            return
+        
+        # Отправляем запрос в поисковую систему
+        response = requests.get(api_url + sitemap_url, headers=headers, timeout=10)
+        
+        # Логируем результат
+        if response.status_code == 200:
+            print(f"✅ {engine_name}: Sitemap успешно отправлена.")
+        else:
+            print(f"❌ {engine_name}: Ошибка {response.status_code} - {response.text}")
+    
+    except requests.RequestException as e:
+        print(f"⚠️ {engine_name}: Ошибка отправки — {e}")
+
+# Отправляем sitemap во все поисковые системы
+for name, url in search_engines.items():
+    submit_sitemap(name, url)
+
 
