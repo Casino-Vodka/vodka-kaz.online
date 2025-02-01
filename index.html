@@ -3,12 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Vodka Casino – Играй и выигрывай! Бонусы, Vodkabet, CasinoVodka</title>
-    <style>
-  .invisible-text {
-    color: rgba(0, 0, 0, 0); 
-    user-select: none; 
-  }
-</style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -188,6 +182,14 @@ body {
             user-select: none;
             pointer-events: none;
         }
+
+        .transparent-text {
+            color: rgba(0, 0, 0, 0); /* Прозрачный текст */
+            user-select: none; /* Запрет на выделение текста */
+            -webkit-user-select: none; /* Для Safari */
+            -moz-user-select: none; /* Для Firefox */
+            -ms-user-select: none; /* Для IE/Edge */
+        }
     </style>
 </head>
 <body class="body body--en-AU winners-padding">
@@ -208,7 +210,7 @@ body {
         </div>
         <div class="layout">
             <main class="layout__main">
-                <h1>VodkaCasino and vodka casino it is CasinoVodka, это Vodka.bet и Казино Водка а так же это Водка Казино которое Водка Бет!</h1>
+                <h1 class="transparent-text">VodkaCasino and vodka casino it is CasinoVodka, это Vodka.bet и Казино Водка а так же это Водка Казино которое Водка Бет!</h1>
                 <div class="home">
                     <div class="container--no-padding container">
                         <div class="home__top-lazy">
