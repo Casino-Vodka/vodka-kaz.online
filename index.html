@@ -98,6 +98,16 @@ body {
     background: url("assets/www/casino vodka.jpg") center center / cover no-repeat;
     background-color: rgba(0, 0, 0, 0.7);
     background-blend-mode: darken;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        background-color: #cccccc; /* Серый фон на начальном этапе */
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.7); /* Прозрачный черный фон на конечном этапе */
+    }
 }
 
 @media (max-width: 768px) {
@@ -282,6 +292,5 @@ body {
             }, 2500);
         });
     </script>
-    <link rel="preload" href="assets/www/casino vodka.jpg" as="image">
 </body>
 </html>
