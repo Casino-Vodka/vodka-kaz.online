@@ -1,15 +1,14 @@
 # Включаем модуль переписывания URL
 RewriteEngine On
 
+# Перенаправляем HTTP на HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://vodkacasino.store/$1 [R=301,L]
+
 # Если запрашиваемый файл или папка не существуют, перенаправляем на index.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
-
-# Если сайт переехал и нужно перенаправить старую страницу на новую (измените ссылки)
-RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ https://vodkacasino.store/$1 [R=301,L]
 
 # Разрешаем индексацию страницы для поисковиков
 Header set X-Robots-Tag "index, follow"
@@ -19,3 +18,4 @@ Header set X-Robots-Tag "index, follow"
     ExpiresActive On
     ExpiresDefault "access plus 1 month"
 </IfModule>
+
