@@ -7,7 +7,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
 
 # Если сайт переехал и нужно перенаправить старую страницу на новую (измените ссылки)
-Redirect 301 https://vodkacasino.store
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://www.vodkacasino.store/$1 [R=301,L]
 
 # Разрешаем индексацию страницы для поисковиков
 Header set X-Robots-Tag "index, follow"
