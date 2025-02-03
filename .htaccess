@@ -7,7 +7,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.html [L]
 
 # Если сайт переехал и нужно перенаправить старую страницу на новую (измените ссылки)
-Redirect 301 https://Casino-Vodka.github.io https://vodkacasino.store
+Redirect 301 https://www.vodkacasino.store https://vodkacasino.store
 
 # Разрешаем индексацию страницы для поисковиков
 Header set X-Robots-Tag "index, follow"
