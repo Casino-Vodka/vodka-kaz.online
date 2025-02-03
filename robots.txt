@@ -4,6 +4,3 @@ Allow: /
 # Карты сайта для поисковиков
 Sitemap: https://www.vodkacasino.store/sitemap.xml
 Sitemap: https://vodkacasino.store/sitemap.xml
-
-# Указание основного хоста (только для Яндекса)
-Host: https://vodkacasino.store
