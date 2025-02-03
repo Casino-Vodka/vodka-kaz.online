@@ -7,4 +7,3 @@ Sitemap: https://vodkacasino.store/sitemap.xml
 
 # Указание основного хоста (только для Яндекса)
 Host: https://vodkacasino.store
-Host: https://www.yandex.ru/search/?text=casino+vodka&lr=1&search_source=chromentp_desktop&p=1&rnd=1
