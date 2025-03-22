@@ -2,5 +2,4 @@ User-agent: *
 Allow: /
 
 # Карты сайта для поисковиков
-Sitemap: https://www.vodkacasino.store/sitemap.xml
 Sitemap: https://vodkacasino.store/sitemap.xml
