@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 
+Host: https://vodkacasino.store/
 # Карты сайта для поисковиков
 Sitemap: https://vodkacasino.store/sitemap.xml
