@@ -3,7 +3,7 @@ RewriteEngine On
 
 # Перенаправляем HTTP на HTTPS
 RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ https://vodkacasino.store/$1 [R=301,L]
+RewriteRule ^(.*)$ https://vodka-kaz.online/$1 [R=301,L]
 
 # Если запрашиваемый файл или папка не существуют, перенаправляем на index.html
 RewriteCond %{REQUEST_FILENAME} !-f
