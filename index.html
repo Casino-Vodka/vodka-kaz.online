@@ -364,39 +364,6 @@
         <script defer src="https://vodka-kaz.online/scripts/clipboard.min.js"></script>
         <script defer src="https://vodka-kaz.online/scripts/custom.js"></script>
         <div id="datetime"></div>
-          <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      async function updateDateTimeAndLocation() {
-        const datetimeEl = document.getElementById('datetime');
-        const locationEl = document.getElementById('location');
-
-        if (datetimeEl) {
-          datetimeEl.textContent = new Date().toString();
-        }
-
-        try {
-          const res = await fetch('https://ipapi.co/json/');
-          const data = await res.json();
-          if (locationEl) {
-            locationEl.textContent = `Country: ${data.country_name || 'no'}`;
-          }
-        } catch {
-          if (locationEl) {
-            locationEl.textContent = 'no location upgrade';
-          }
-        }
-      }
-
-      updateDateTimeAndLocation();
-
-      setInterval(() => {
-        const datetimeEl = document.getElementById('datetime');
-        if (datetimeEl) {
-          datetimeEl.textContent = new Date().toString();
-        }
-      }, 1000);
-    });
-  </script>
         <script>const langLinks = ["https://vodka-kaz.online/ru/", "https://vodka-kaz.online/en/", "https://vodka-kaz.online/ar/", "https://vodka-kaz.online/de/", "https://vodka-kaz.online/fr/", "https://vodka-kaz.online/pt/", "https://vodka-kaz.online/hi/", "https://vodka-kaz.online/es/", "https://vodka-kaz.online/zn-ch/"]; const currentUrl = window.location.href; let currentIndex = langLinks.findIndex(url => currentUrl.startsWith(url)); if (currentIndex === -1) currentIndex = 0; document.getElementById("lang-switcher").addEventListener("click", () => { const nextIndex = (currentIndex + 1) % langLinks.length; window.location.href = langLinks[nextIndex]; }); </script>
     </footer>
 </body>
