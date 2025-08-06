@@ -6,4 +6,10 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+        <url>
+        <loc>https://vodka-kaz.online/amp.html</loc>
+        <lastmod>2025-03-22</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
     </urlset>
